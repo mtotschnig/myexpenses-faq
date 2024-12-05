@@ -11,8 +11,21 @@
  * Learn more at https://developers.cloudflare.com/workers/
  */
 
+const shortURLs = {
+  "data-transfer": "FAQ%3A-Data#how-to-transfer-data-to-a-new-device",
+  "sync-debug": "FAQ%3A-Synchronization#synchronization-stopped-working-how-can-i-find-out-why",
+} as Record<string, string>
+
 export default {
 	async fetch(request, env, ctx): Promise<Response> {
-		return new Response('Hello World!');
+		 const url = new URL(request.url)
+
+    const redirectURL = shortURLs[url.pathname.substring(1)]
+
+    if (!redirectURL) {
+      return new Response("Not found", { status: 404 });
+    }
+
+    return Response.redirect("https://github.com/mtotschnig/MyExpenses/wiki/" + redirectURL, 301)
 	},
 } satisfies ExportedHandler<Env>;
