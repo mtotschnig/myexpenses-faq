@@ -11,6 +11,11 @@
  * Learn more at https://developers.cloudflare.com/workers/
  */
 
+const baseURL = "https://faq.myexpenses.mobi/"
+const targetUrl = "https://github.com/mtotschnig/MyExpenses/wiki/FAQ:-"
+const sections = [
+  "Data", "Synchronization", "Import-Export", "OCR", "Distribution", "Reconciliation", "Templates-and-plans", "UI"
+]
 const shortURLs = {
   "data-transfer": "Data#how-to-transfer-data-to-a-new-device",
   "sync-debug": "Synchronization#synchronization-stopped-working-how-can-i-find-out-why",
@@ -22,17 +27,30 @@ const shortURLs = {
   "sync-xiaomi": "Synchronization#synchronization-does-not-work-on-my-xiaomi-or-tcl-or-similar-device-why",
   "parties-merge": "Data#strategies-for-merging-duplicate-parties",
   "category-types": "Data#expense-and-income-categories"
-
-} as Record<string, string>
+}
 
 export default {
-	async fetch(request, env, ctx): Promise<Response> {
+  async fetch(request, env, ctx): Promise<Response> {
 
     const url = new URL(request.url)
     const path = url.pathname.substring(1)
 
-    const redirectURL = path.length == 0 ? "FAQ" : ("FAQ:-" + (shortURLs[url.pathname.substring(1)] || path))
-
-    return Response.redirect("https://github.com/mtotschnig/MyExpenses/wiki/" + redirectURL, 301)
+    if (path.length == 0) {
+        const html = `<!DOCTYPE html>
+        <body>
+          <h1>My Expenses FAQ URL Shortener</h1>
+          <ul>
+             ${sections.map(section => `<li><a href="${baseURL}${section}">${section}</a></li>`).join("")}
+            ${Object.entries(shortURLs).map(([key, value]) => `<li><a href="${baseURL}${key}">${key}</a></li>`).join("")}
+          </ul>
+        </body>`
+          return new Response(html, {
+            headers: { "content-type": "text/html;charset=UTF-8" },
+            status: 200
+    });
+    } else {
+      const redirectURL = shortURLs[path] || path
+      return Response.redirect(targetUrl + redirectURL, 301)
+    }
   },
 } satisfies ExportedHandler<Env>;
