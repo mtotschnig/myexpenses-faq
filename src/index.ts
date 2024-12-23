@@ -26,7 +26,11 @@ const shortURLs = {
   "data-encryption": "Data#how-does-database-encryption-work",
   "sync-xiaomi": "Synchronization#synchronization-does-not-work-on-my-xiaomi-or-tcl-or-similar-device-why",
   "parties-merge": "Data#strategies-for-merging-duplicate-parties",
-  "category-types": "Data#expense-and-income-categories"
+  "category-types": "Data#expense-and-income-categories",
+  "ios": "Distribution#is-there-a-version-of-this-project-for-iosiphone",
+  "plans-create" : "Templates-and-plans#how-to-create-a-recurring-transaction",
+  "plans-future" : "Templates-and-plans#how-can-i-add-future-instances-of-plans",
+  "plans-past" : "Templates-and-plans#how-can-i-add-past-instances-of-plans",
 }
 
 export default {
@@ -40,7 +44,7 @@ export default {
         <body>
           <h1>My Expenses FAQ URL Shortener</h1>
           <ul>
-             ${sections.map(section => `<li><a href="${baseURL}${section}">${section}</a></li>`).join("")}
+            ${sections.map(section => `<li><a href="${baseURL}${section}">${section}</a></li>`).join("")}
             ${Object.entries(shortURLs).map(([key, value]) => `<li><a href="${baseURL}${key}">${key}</a></li>`).join("")}
           </ul>
         </body>`
