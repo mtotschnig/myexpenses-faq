@@ -31,6 +31,8 @@ const shortURLs = {
   "plans-create" : "Templates-and-plans#how-to-create-a-recurring-transaction",
   "plans-future" : "Templates-and-plans#how-can-i-add-future-instances-of-plans",
   "plans-past" : "Templates-and-plans#how-can-i-add-past-instances-of-plans",
+  "device-limit" : "Distribution#when-trying-to-validate-a-licence-key-on-the-f-droid-version-i-get-device-limit-exceeded",
+  "data-auto-backup" : "Data#how-can-i-backup-my-data-for-the-case-my-device-gets-lost"
 }
 
 export default {
