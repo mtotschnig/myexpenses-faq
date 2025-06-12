@@ -18,14 +18,14 @@ describe('FAQ worker', () => {
 		expect(await response.status).toBe(404);
 	});
 
-        it('responds with not found', async () => {
-                const request = new IncomingRequest('http://example.com/sync-debug');
-                // Create an empty context to pass to `worker.fetch()`.
-                const ctx = createExecutionContext();
-                const response = await worker.fetch(request, env, ctx);
-                // Wait for all `Promise`s passed to `ctx.waitUntil()` to settle before running test assertions
-                await waitOnExecutionContext(ctx);
-                expect(await response.status).toBe(301);
-        });
+  it('responds with not found', async () => {
+          const request = new IncomingRequest('http://example.com/sync-debug');
+          // Create an empty context to pass to `worker.fetch()`.
+          const ctx = createExecutionContext();
+          const response = await worker.fetch(request, env, ctx);
+          // Wait for all `Promise`s passed to `ctx.waitUntil()` to settle before running test assertions
+          await waitOnExecutionContext(ctx);
+          expect(await response.status).toBe(301);
+  });
 
 });

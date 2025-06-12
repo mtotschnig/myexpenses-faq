@@ -18,6 +18,7 @@ const sections = [
 ]
 const shortURLs = {
   "data-transfer": "Data#how-to-transfer-data-to-a-new-device",
+  "sync-setup": "Synchronization#how-to-set-up-synchronization",
   "sync-debug": "Synchronization#synchronization-stopped-working-how-can-i-find-out-why",
   "sync-budget": "Synchronization#synchronization-of-budgets",
   "data-attachments": "Data#pros-and-cons-of-copying-or-linking-attachments",
@@ -32,7 +33,12 @@ const shortURLs = {
   "plans-future" : "Templates-and-plans#how-can-i-add-future-instances-of-plans",
   "plans-past" : "Templates-and-plans#how-can-i-add-past-instances-of-plans",
   "device-limit" : "Distribution#when-trying-to-validate-a-licence-key-on-the-f-droid-version-i-get-device-limit-exceeded",
-  "data-auto-backup" : "Data#how-can-i-backup-my-data-for-the-case-my-device-gets-lost"
+  "data-auto-backup" : "Data#how-can-i-backup-my-data-for-the-case-my-device-gets-lost",
+  "ui-transfer" : "UI#how-do-i-create-a-transfer-between-two-accounts",
+  "licence-transfer" : "Distribution#i-bought-the-licence-key-for-the-version-distributed-on-play-storeamazon-appstoref-droid-is-it-transferable-to-the-version-distributed-on-another-store",
+  "ui-reopen": "UI#how-to-reopen-an-accidentally-closed-account",
+  "data-categories": "Data#expense-and-income-categories",
+  "data-picture-source": "Data#how-to-configure-the-source-for-picture-attachments"
 }
 
 export default {
