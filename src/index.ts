@@ -38,7 +38,10 @@ const shortURLs = {
   "licence-transfer" : "Distribution#i-bought-the-licence-key-for-the-version-distributed-on-play-storeamazon-appstoref-droid-is-it-transferable-to-the-version-distributed-on-another-store",
   "ui-reopen": "UI#how-to-reopen-an-accidentally-closed-account",
   "data-categories": "Data#expense-and-income-categories",
-  "data-picture-source": "Data#how-to-configure-the-source-for-picture-attachments"
+  "data-picture-source": "Data#how-to-configure-the-source-for-picture-attachments",
+  "distribution-transfer": "Distribution#i-bought-the-licence-key-for-the-version-distributed-on-play-storeamazon-appstoref-droid-is-it-transferable-to-the-version-distributed-on-another-store",
+  "ui-color": "UI#why-are-some-expenses-shown-in-green-some-income-shown-as-red",
+  "inactive": "UI#how-to-access-an-inactive-account"
 }
 
 export default {
